@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Game App</string>
+    <string-array name="Games">
+        <item>Fallout </item>
+        <item>Borderlands 2</item>
+        <item>Payday 2</item>
+        <item>Battlefield</item>
+        <item>Portal 2</item>
+        <item>The Witcher 3: Wild Hunt</item>
+        <item>The Elder Scrolls V: Skyrim</item>
+        <item>Left 4 Dead 2</item>
+        <item>BioShock Infinite</item>
+    </string-array>
+    <string name = "name">Name</string>
+    <string name = "release">Release Date</string>
+</resources>

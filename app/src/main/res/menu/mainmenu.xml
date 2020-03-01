@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/action_help"
+        android:title="Help"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_settings"
+        android:title="Settings"
+        android:icon="@drawable/ic_action_settings"
+        app:showAsAction="never" >
+
+        <menu>
+            <item android:id = "@+id/awesomeBackground"
+            android:title = "Awesome Background" />
+            <item android:id = "@+id/coolBackground"
+                android:title = "Cool Background" />
+            <item android:id = "@+id/cuteBackground"
+                android:title = "Cute Background" />
+        </menu>
+    </item>
+
+    <item android:id="@+id/action_share"
+        android:title="Share"
+        app:showAsAction="never"
+        app:actionProviderClass="androidx.appcompat.widget.ShareActionProvider"
+        />
+
+
+</menu>
