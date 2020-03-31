@@ -22,7 +22,7 @@ public class OpeningActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_opening);
-        OpeningFragment opening = (OpeningFragment)getSupportFragmentManager().findFragmentById(R.id.OpeningFragment);
+        getSupportFragmentManager().findFragmentById(R.id.OpeningFragment);
 
     }
 
