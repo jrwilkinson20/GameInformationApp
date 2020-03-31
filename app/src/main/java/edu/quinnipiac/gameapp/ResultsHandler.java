@@ -2,7 +2,7 @@ package edu.quinnipiac.gameapp;
 
 /*
 @authors: Victoria Gorski and Julia Wilkinson
-@date: 2 - 29 - 20
+@date: 3 - 31 - 20
 @description: The ResultsHandler class is used to get the data from the API and return it to the ResultsActivity class.
  */
 
@@ -31,14 +31,7 @@ public class ResultsHandler {
        game_Description = game_Description.replaceAll("<br>", "");
 
 
-
        String printString = "Name: " + game_name + "\nRelease Date: " + game_released + "\nDescription: " + game_Description;
-
-
-
-
-
-
 
         return printString;
     }

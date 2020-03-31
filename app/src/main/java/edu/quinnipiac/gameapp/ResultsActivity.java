@@ -2,7 +2,7 @@ package edu.quinnipiac.gameapp;
 
 /*
 @authors: Victoria Gorski and Julia Wilkinson
-@date: 2 - 29 - 20
+@date: 3 - 31 - 20
 @description: The ResultsActivity class is used to display the name and release data of the selected game.
  */
 
@@ -20,6 +20,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
 // Constructor
 public class ResultsActivity extends AppCompatActivity {
     private String url;
@@ -31,9 +32,11 @@ public class ResultsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
-        ResultsFragment results = (ResultsFragment)getSupportFragmentManager().findFragmentById(R.id.ResultsFragment);
+        // Allow the fragment to be added to the activity
+        getSupportFragmentManager().findFragmentById(R.id.ResultsFragment);
         view = findViewById(R.id.viewText);
         Intent intent = getIntent();
+        // Connect to the url and find the information
         urlAddition = intent.getStringExtra("gameName");
         url = "https://rawg-video-games-database.p.rapidapi.com/games/" + urlAddition;
         new FetchResults().execute(url);
@@ -117,7 +120,6 @@ public class ResultsActivity extends AppCompatActivity {
                     return null;
                 }
                 return buffer;
-
             }
         }
     }

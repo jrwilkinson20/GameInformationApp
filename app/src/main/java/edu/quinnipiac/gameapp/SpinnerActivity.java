@@ -2,7 +2,7 @@ package edu.quinnipiac.gameapp;
 
 /*
 @authors: Victoria Gorski and Julia Wilkinson
-@date: 2 - 29 - 20
+@date: 3 - 31 - 20
 @description: The SpinnerActivity class is used to control the spinner and the games in it. It connects to the API and then passes its data to the ResultsHandler
 class in order to be converted into Strings the user can read.
  */
@@ -12,9 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.MenuItemCompat;
 import android.app.AlertDialog;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,15 +21,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import androidx.appcompat.widget.ShareActionProvider;
-import android.widget.Spinner;
 import android.widget.Toast;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.Collections;
 
 // Constructor
 public class SpinnerActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
@@ -44,7 +34,6 @@ public class SpinnerActivity extends AppCompatActivity implements AdapterView.On
     ListView list;
 
 
-    String listSelectedValue;
     private ShareActionProvider provider;
 
     // Used to create the options menu
@@ -111,41 +100,31 @@ public class SpinnerActivity extends AppCompatActivity implements AdapterView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spinner);
-        SpinnerFragment spinner = (SpinnerFragment)getSupportFragmentManager().findFragmentById(R.id.SpinnerFragment);
+        // Glue the fragment and the activity together
+        getSupportFragmentManager().findFragmentById(R.id.SpinnerFragment);
         getIntent();
 
-
-
         // Connect the layout with the activity
-        // Spinner spinner = findViewById(R.id.spinner);
         list = findViewById(R.id.list);
         list.setOnItemClickListener(this);
         String[] items = {"Fallout ","Battlefield" ,"Galaga", "Sonic", "Yoshi","Minecraft", "Castlevania", "Tetris", "Fortnite"};
 
         // Create the spinner drop - down menu
-
             ArrayAdapter<String> resultsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,items);
             list.setAdapter(resultsAdapter);
-            // Throw this if the spinner doesn't work
-
-
-        // Get the game the user selects
-
-
-
-
 
     }
 
+    // If a game is selected, search up that game
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+        // Get the position of the game from the library
         String selected = list.getItemAtPosition(position).toString();
         selected.replaceAll(" ","");
+        // Get the information and send it to the ResultsActivity class
         Intent intent = new Intent(this, ResultsActivity.class);
         intent.putExtra("gameName", selected);
         startActivity(intent);
-
-
     }
 
     // If a user clicks something, make sure the item is selected
@@ -154,5 +133,4 @@ public class SpinnerActivity extends AppCompatActivity implements AdapterView.On
         super.onUserInteraction();
         userSelect = true;
     }
-
 }
