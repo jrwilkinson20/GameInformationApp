@@ -111,6 +111,7 @@ public class SpinnerActivity extends AppCompatActivity implements AdapterView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spinner);
+        SpinnerFragment spinner = (SpinnerFragment)getSupportFragmentManager().findFragmentById(R.id.SpinnerFragment);
         getIntent();
 
 

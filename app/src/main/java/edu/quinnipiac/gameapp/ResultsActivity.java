@@ -31,6 +31,7 @@ public class ResultsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
+        ResultsFragment results = (ResultsFragment)getSupportFragmentManager().findFragmentById(R.id.ResultsFragment);
         view = findViewById(R.id.viewText);
         Intent intent = getIntent();
         urlAddition = intent.getStringExtra("gameName");

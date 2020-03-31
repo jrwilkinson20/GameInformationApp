@@ -11,34 +11,10 @@
     android:background="@drawable/background1"
     >
 
-
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="70dp"
-        android:layout_gravity="center"
-        android:layout_weight="0.5"
-        android:gravity="center"
-        android:text="Welcome to Game Information!"
-        android:textColor="#000000"
-        android:textSize="30sp"
-        app:fontFamily="@font/abril_fatface" />
-
-    <ImageView
-        android:id="@+id/startImage"
+    <fragment
+        android:id="@+id/OpeningFragment"
+        android:name="edu.quinnipiac.gameapp.OpeningFragment"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_weight="1"
-        android:scaleType="centerCrop"
-        android:src="@drawable/videogamelibrary" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Begin"
-        android:padding="16dp"
-        android:id="@+id/startbutton"
-        android:onClick="onBegin"/>
+        android:layout_height="match_parent" />
 
 </LinearLayout>

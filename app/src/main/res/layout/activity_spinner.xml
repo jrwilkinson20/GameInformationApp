@@ -9,16 +9,11 @@
     android:background="@drawable/background1">
 
 
-    <ListView
-        android:id="@+id/list"
+    <fragment
+        android:id="@+id/SpinnerFragment"
+        android:name="edu.quinnipiac.gameapp.SpinnerFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clickable="true"
-        android:dividerHeight="1dp"
-        android:entries="@array/Games"
-        app:fontFamily="@font/abril_fatface"
-        android:gravity="center"
-        android:focusable="true" />
+        android:layout_height="match_parent" />
 
 
 </RelativeLayout>
